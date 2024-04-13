@@ -1,0 +1,25 @@
+.dish-card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: 63px;
+  }
+  
+  .dish-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .dish-name {
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+    text-align: center;
+  }
+  .crd-dish-btn{
+    border: none;
+    background: none;
+  }
