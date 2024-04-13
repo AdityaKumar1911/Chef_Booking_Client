@@ -1,0 +1,10 @@
+.chef-by-dishes-row {
+    margin-top: 0;
+    position: relative;
+    width: 90%;
+}
+.param-headers {
+    font-size: 20px;
+    margin-left: 1px;
+    margin-right: auto;
+}

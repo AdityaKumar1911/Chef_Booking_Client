@@ -1,3 +1,113 @@
-.d-block{
-    height: 90vh;
+.homepage-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 44vh;
+    /* width: 100vw; */
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+    margin: auto;
+    width: 40%;
+}
+
+.text-container h1 {
+    color: orange;
+    font-size: 48px;
+    font-weight: 450;
+}
+.typing-effect {
+    overflow: hidden;
+}
+.selection {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    min-height: 100px;
+}
+
+.img-box {
+    background: url('https://www.chefonwheelz.com/static/media/homepage1.1719e303843efde9e83f.png');
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 10px;
+    height: 22rem;
+    margin: 10px;
+    position: relative;
+    transition: width .5s;
+    width: 100px;
+}
+
+
+.img-box.active, .img-box:hover {
+    cursor: pointer;
+    width: 363px;
+}
+
+.image-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 50%;
+}
+.glass {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, #ffffff1a, #fff0);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 #0000005e;
+    padding: 10px;
+}
+.gallery {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+ .img-box p {
+    bottom: 0;
+    color: #fff;
+    left: 20px;
+    opacity: 0;
+    transition: bottom .5s, opacity .5s;
+}
+.img-box.active div, .img-box:hover div {
+    bottom: 30px;
+    opacity: 1;
+}
+
+.img-box div, .img-box p {
+    bottom: 0;
+    color: #fff;
+    left: 20px;
+    opacity: 0;
+    transition: bottom .5s, opacity .5s;
+}
+.img-box div {
+    max-width: 200px;
+    position: absolute;
+}
+
+.img-box.active p, .img-box:hover p {
+    bottom: 30px;
+    opacity: 1;
+}
+
+.img-box .p-top {
+    font-size: 16px;
+}
+
+.img-box .p-bottom {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.img-box:nth-child(2) {
+   
+    background-position: 50%;
+    background-size: cover;
 }

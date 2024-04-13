@@ -1,10 +1,29 @@
 
+.navbar{
+	background-image: url('https://www.chefonwheelz.com/static/media/emojiback.48b15d12a126a0aabef8.svg');
+	background-color: #fff;
+	
+}
 
+.app-left{
+	align-items: center;
+    display: flex;
+}
 
 .logo{
-  height: 60px;
-  width: 150px;
+	cursor: pointer;
+    height: auto;
+    margin-right: 10px;
+    width: 70px;
+
 }
+.App-name{
+	color: #107569;
+	  cursor: pointer;
+	  font-size: 24px;
+	  font-weight: 600;
+	  margin: 0;
+  }
 
 .navbar .navbar-brand b {
 	color: #FFBF00;		
@@ -16,10 +35,10 @@
 	position: relative;
 }
 .navbar a, .navbar a:active {
-	color: #888;
-	font-size: 18px;
-	background: transparent;
-  margin-right: 15px;
+	
+  text-decoration: none;
+
+ 
 }
 
 .navbar .btn-primary, .navbar .btn-primary:active {
@@ -63,4 +82,33 @@
 	.navbar .navbar-nav .btn-primary, .navbar .navbar-nav .btn-primary:active {
 		display: block;
 	}
+}
+
+.input-icon-container{
+	align-items: center;
+    display: flex;
+    position: relative;
+}
+
+.autosuggest-input {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #0000001a;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px 35px;
+    /* width: 100%; */
+}
+
+.login-button {
+    background-color: #1075691a;
+    border: 2px solid #7ddacf;
+    border-radius: 10px;
+    color: #107569;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 8px 40px;
+    text-decoration: none;
+	
 }

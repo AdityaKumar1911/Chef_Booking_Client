@@ -9,6 +9,7 @@ import Footer from "./Footer/Footer";
 import BookChef from "./Components/BookChef/BookChef";
 import ChefBookSession from "./Components/ChefBookSession/ChefBookSession";
 import { useState } from "react";
+// import backgraounimg from '../src/assets/background.svg'
 
 function App() {
   const [dishName, setDishName] = useState("");

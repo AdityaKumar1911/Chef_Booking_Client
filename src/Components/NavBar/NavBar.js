@@ -2,15 +2,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../NavBar/NavBar.css";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo_no.png";
 
 function NavBar() {
   const value = localStorage.getItem("value");
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light pl-3 pr-5 fixed-top">
+    <nav className="navbar navbar-expand-lg  pl-3 pr-5 sticky-top">
       <Link to="/">
-        <img className="logo" src={logo} alt="" />
+        <div className="app-left">
+          <img className="logo" src={logo} alt="" />
+          <h3 className="App-name">Chef on Wheelz</h3>
+        </div>
       </Link>
       <button
         type="button"
@@ -24,22 +27,16 @@ function NavBar() {
         id="navbarCollapse"
         className="collapse navbar-collapse justify-content-start"
       >
+        <div className="input-icon-container">
+          <input className="autosuggest-input" type="text" placeholder="Detect my location" value="" />
+        </div>
         <div className="navbar-nav action-buttons ml-auto">
-          <Link to="/" className="nav-item nav-link">
-            Home
-          </Link>
-          <Link to="/about" className="nav-item nav-link">
-            About
-          </Link>
-          <Link to="/contact" className="nav-item nav-link">
-            Contact
-          </Link>
           {value === "0" ? (
-            <Link to="/Login" className="btn btn-primary">
+            <Link to="/Login" className="login-button">
               Login
             </Link>
           ) : (
-            <Link to="/Logout" className="btn btn-primary">
+            <Link to="/Logout" className="login-button">
               Logout
             </Link>
           )}
