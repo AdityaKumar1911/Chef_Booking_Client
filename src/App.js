@@ -5,7 +5,7 @@ import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
 import Logout from "./Components/Logout/Logout";
 import SignUp from "./Components/SignUp/SignUp";
-import Footer from "./Footer/Footer";
+// import Footer from "./Footer/Footer";
 import BookChef from "./Components/BookChef/BookChef";
 import ChefBookSession from "./Components/ChefBookSession/ChefBookSession";
 import { useState } from "react";
@@ -29,7 +29,7 @@ function App() {
           }
         />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 }

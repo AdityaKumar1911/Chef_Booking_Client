@@ -3,7 +3,8 @@ import Slider from "../OfferSlider/Slider";
 import DishCarousel from "../ChefDish/ChefDish";
 import OurChefs from "../OurChefs/OurChefs";
 import NavBar from "../NavBar/NavBar";
-import Chefbydishes from "../Chefbydishes/Chefbydishes";
+import Footer from  "../Footer/Footer";
+// import Chefbydishes from "../Chefbydishes/Chefbydishes";
 import './Home.css';
 
 function Home({ setDishName }) {
@@ -14,9 +15,10 @@ function Home({ setDishName }) {
     <div className="home">
       <NavBar />
       <Slider />
-      <Chefbydishes/>
+      {/* <Chefbydishes/> */}
       <DishCarousel setDishName={setDishName} />
       <OurChefs />
+      <Footer/>
     </div>
   );
 }

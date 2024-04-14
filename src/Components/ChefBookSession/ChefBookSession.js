@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Col, Row } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
@@ -44,9 +44,9 @@ const ChefBookSession = ({ dishName, setDishName }) => {
     <>
       <NavBar />
       <div className="container">
-        <div>
-        <Button className="sort-by-btn mr-2">Sort By</Button>
-        <Button>filter-button</Button>
+        <div className="mb-2">
+          <Button className="sort-by-btn mr-2">Sort By</Button>
+          <Button>filter-button</Button>
         </div>
         {dishes.map((dish) => (
           <button
@@ -69,57 +69,57 @@ const ChefBookSession = ({ dishName, setDishName }) => {
           </button>
         ))}
         <br />
-        {chefs.map((obj) => (
-          <>
-            {obj.dishes.map((dish) => (
+        <Row xs={1} md={2} lg={3} className="g-4 mt-2">
+          {chefs.map((obj) => (
+            obj.dishes.map((dish) => (
               <>
                 {dish === dishName && (
-                  <Card className="card-chef" >
-                    <div className="logo-name">
-                    <div>
-                    <Card.Img 
-                      variant="top"
-                      src="https://via.placeholder.com/150"
-                      style={{ borderRadius: "50%", height: "100px", width: "100px", objectFit: "cover", padding:"10px" }}
-                    />
-                    </div>
-                    <div>
-                    <Card.Title>
-                        <h4>{obj.name}</h4>
-                      </Card.Title>
-                      <div className="card-text mt-0.1 ">
-                      <Card.Text >
-                        <h5>Cuisine and Dishes</h5>
-                        {obj.dishes.map((d) => (
-                          <button id="dish-btn"><p key={d}>{d}</p></button>
-                        ))}
-                      </Card.Text>
+                  <Col>
+                    <Card className="card-chef" style={{ height: "400px", overflow: "auto" }}>
+                      <div className="logo-name">
+                        <div>
+                          <Card.Img 
+                            variant="top"
+                            src="https://via.placeholder.com/150"
+                            style={{ borderRadius: "50%", height: "100px", width: "100px", objectFit: "cover", padding:"10px" }}
+                          />
+                        </div>
+                        <div>
+                          <Card.Title>
+                            <h4>{obj.name}</h4>
+                          </Card.Title>
+                          <div className="card-text mt-0.1">
+                            <Card.Text>
+                              <h5>Cuisine and Dishes</h5>
+                              {obj.dishes.map((d) => (
+                                <button id="dish-btn"><p key={d}>{d}</p></button>
+                              ))}
+                            </Card.Text>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    </div>
-                    <Card.Body>
-                    <div>
-                      <p>Available from</p>
-                        <p>
-                          {obj.serviceStartTime} to {obj.serviceEndTime}
-                        </p>
-                      </div>
-                      
-                      <Button
-                        variant="primary"
-                        style={{ borderRadius: "5px", cursor: "pointer" }}
-                        onClick={handleClick}
-                      >
-                        Book a session
-                      </Button>
-                      
-                    </Card.Body>
-                  </Card>
+                      <Card.Body>
+                        <div>
+                          <p>Available from</p>
+                          <p>
+                            {obj.serviceStartTime} to {obj.serviceEndTime}
+                          </p>
+                        </div>
+                        <Button
+                          variant="primary"
+                          style={{ borderRadius: "5px", cursor: "pointer" }}
+                          onClick={handleClick}
+                        >
+                          Book a session
+                        </Button>
+                      </Card.Body>
+                    </Card>
+                  </Col>
                 )}
               </>
-            ))}
-          </>
-        ))}
+            ))
+          ))}
+        </Row>
       </div>
     </>
   );

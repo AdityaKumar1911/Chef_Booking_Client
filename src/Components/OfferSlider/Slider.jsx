@@ -1,6 +1,7 @@
 import React from "react";
 // import { Carousel } from "react-bootstrap";
-import './Slider.css'
+import './Slider.css';
+
 
 const ChefOfferSlider = () => {
   return (
