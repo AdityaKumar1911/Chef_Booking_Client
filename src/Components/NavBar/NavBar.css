@@ -1,3 +1,118 @@
+/* 
+.navbar{
+	background-image: url('https://www.chefonwheelz.com/static/media/emojiback.48b15d12a126a0aabef8.svg');
+	background-color: #fff;
+	
+}
+
+.app-left{
+	align-items: center;
+    display: flex;
+}
+
+.logo{
+	cursor: pointer;
+    height: auto;
+    margin-right: 10px;
+    width: 70px;
+
+}
+.App-name{
+	color: #107569;
+	  cursor: pointer;
+	  font-size: 24px;
+	  font-weight: 600;
+	  margin: 0;
+  }
+
+.navbar .navbar-brand b {
+	color: #FFBF00;		
+}
+.navbar .form-inline {
+	display: inline-block;
+}
+.navbar .navbar-nav {
+	position: relative;
+}
+.navbar a, .navbar a:active {
+	
+  text-decoration: none;
+
+ 
+}
+
+.navbar .btn-primary, .navbar .btn-primary:active {
+	color: #fff;
+	background: #FFBF00 !important;
+	padding-top: 8px;
+	padding-bottom: 6px;
+	border-radius: 4px;
+	vertical-align: middle;
+	border: none;
+	min-width: 120px;
+	margin: 2px 0;
+}
+.navbar .btn-primary:hover, .navbar .btn-primary:focus {		
+	color: #fff;
+	background: #5765c1 !important;
+}
+.navbar .action-buttons .dropdown-toggle::after {
+	display: none;
+}
+
+@media (min-width: 1200px){
+	.form-inline .input-group {
+		width: 300px;
+		margin-left: 30px;
+	}
+}
+@media (max-width: 768px){
+	.navbar .dropdown-menu.login-form {
+		width: 100%;
+		padding: 10px 15px;
+		background: transparent;
+		border: none;
+	}
+	.navbar .form-inline {
+		display: block;
+	}
+	.navbar .input-group {
+		width: 100%;
+	}
+	.navbar .navbar-nav .btn-primary, .navbar .navbar-nav .btn-primary:active {
+		display: block;
+	}
+}
+
+.input-icon-container{
+	align-items: center;
+    display: flex;
+    position: relative;
+}
+
+.autosuggest-input {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #0000001a;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px 35px;
+   
+}
+
+.login-button {
+    background-color: #1075691a;
+    border: 2px solid #7ddacf;
+    border-radius: 10px;
+    color: #107569;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 8px 40px;
+    text-decoration: none;
+	
+} */
+
 
 .navbar{
 	background-image: url('https://www.chefonwheelz.com/static/media/emojiback.48b15d12a126a0aabef8.svg');
@@ -100,15 +215,55 @@
     padding: 10px 35px;
     /* width: 100%; */
 }
-
-.login-button {
-    background-color: #1075691a;
-    border: 2px solid #7ddacf;
-    border-radius: 10px;
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+	font-size: 16px;
     color: #107569;
-    font-size: 14px;
-    margin-left: 10px;
-    padding: 8px 40px;
-    text-decoration: none;
-	
-}
+	padding: 8px 10px;
+	border: #7ddacf 1px solid;
+	border-radius: 10px;
+	background-color: #1075691a;
+  }
+
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 130px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	border-radius: 20px;
+	margin-left: -20px;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+	background-color: #ddd;
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+	border-radius: 18px;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+	display: block;
+  }
+  .dropdown{
+	margin-left: auto;
+  }

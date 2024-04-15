@@ -40,6 +40,16 @@ const ChefBookSession = ({ dishName, setDishName }) => {
     }
   };
 
+  const check = (chefID) => {
+    const userId = localStorage.getItem("userid");
+    if (!userId) {
+      navigate("/Login");
+    } else {
+      console.log(`chefID ==> ${chefID}`);
+      navigate(`/chef-booking?chefID=${chefID}`);
+    }
+  };
+
   return (
     <>
       <NavBar />
@@ -108,7 +118,7 @@ const ChefBookSession = ({ dishName, setDishName }) => {
                         <Button
                           variant="primary"
                           style={{ borderRadius: "5px", cursor: "pointer" }}
-                          onClick={handleClick}
+                          onClick={() => check(obj.chefID)}
                         >
                           Book a session
                         </Button>

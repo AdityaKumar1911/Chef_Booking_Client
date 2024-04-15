@@ -27,20 +27,42 @@
     width: 100%;
 }
 
-.green-dot,
-.red-dot {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+.dot {
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
     position: absolute;
     top: 20px;
     left: 40px;
-}
-
-.green-dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .green-dot {
     background-color: green;
-}
-
-.red-dot {
+    color: white;
+  }
+  
+  .red-dot {
     background-color: red;
-}
+    color: white;
+  }
+  
+  .green-dot span,
+  .red-dot span {
+    display: inline-block;
+    animation: zoomInOut 1s infinite alternate;
+  }
+  
+  @keyframes zoomInOut {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.2);
+    }
+  }
+  

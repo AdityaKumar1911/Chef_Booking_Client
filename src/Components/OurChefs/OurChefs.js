@@ -4,6 +4,8 @@ import axios from "axios";
 import "react-multi-carousel/lib/styles.css";
 import "../OurChefs/OurChefs.css";
 import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+
 
 const responsive = {
   desktop: {
@@ -47,7 +49,7 @@ const OurChefs = () => {
       .then((response) => {
         const { chef } = response.data;
         if (chef && chef.isAvailable === false) {
-          alert("Your selected chef is not available");
+          toast.success("Your selected chef is not available");
         } else {
           check(chefID);
         }
@@ -58,18 +60,9 @@ const OurChefs = () => {
       });
   };
 
-  // const check = (chefID) => {
-  //   const token = localStorage.getItem("jwtToken");
-  //   if (!token || token === "0") {
-  //     navigate("/Login");
-  //   } else {
-  //     console.log(`chefPage == > ${chefID}`);
-  //     navigate(`/chef-booking`);
-  //   }
-  // };
   const check = (chefID) => {
-    const token = localStorage.getItem("jwtToken");
-    if (!token || token === "0") {
+    const userId = localStorage.getItem("userid");
+    if (!userId) {
       navigate("/Login");
     } else {
       console.log(`chefPage == > ${chefID}`);
@@ -77,10 +70,10 @@ const OurChefs = () => {
     }
   };
 
-
   return (
     <>
       <h3 className="mt-4 mb-4 text-center">Our Popular rated Chefs</h3>
+      <ToastContainer />
       <Carousel
         responsive={responsive}
         infinite
@@ -109,7 +102,10 @@ const OurChefs = () => {
             <p style={{ marginBottom: "2px" }}>
               End time : {chef.serviceEndTime}
             </p>
-            <div className={chef.isAvailable ? "green-dot" : "red-dot"}></div>
+            {/* <div className={chef.isAvailable ? "green-dot" : "red-dot"}></div> */}
+            <div className={chef.isAvailable ? "dot green-dot" : "dot red-dot"}>
+              <span>{chef.isAvailable ? "Available" : "Not Available"}</span>
+            </div>
             <p>Rating ⭐⭐⭐</p>
             <button
               type="button"

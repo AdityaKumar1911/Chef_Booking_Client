@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import kitchen from "../../assets/kitchen.jpg";
 import "../SignUp/SignUp.css";
 
@@ -8,25 +10,16 @@ const SignupPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!name.trim()) {
-      setError("Please enter your name");
-      return;
-    }
-    if (!email.trim()) {
-      setError("Please enter your email");
-      return;
-    }
-    if (!password.trim()) {
-      setError("Please enter your password");
+    if (!name.trim() || !email.trim() || !password.trim()) {
+      toast.error("Please fill in all fields");
       return;
     }
     if (password !== confirmPassword) {
-      setError("Passwords do not match");
+      toast.error("Passwords do not match");
       return;
     }
 
@@ -42,15 +35,21 @@ const SignupPage = () => {
         throw new Error("Failed to register user");
       }
 
-      // Redirect to login page
-      navigate("/login");
+      // Show success toast
+      toast.success("Signup successful");
+
+      // Redirect to login page after 2 seconds
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
     } catch (error) {
-      setError("Failed to register user");
+      toast.error("Failed to register user");
     }
   };
 
   return (
     <div className="container-fluid">
+      <ToastContainer />
       <div className="row justify-content-center align-items-center vh-100">
         <div
           className="col-md-7 d-none d-md-block mt-0"
@@ -64,7 +63,6 @@ const SignupPage = () => {
         <div className="col-md-5 mt-3" style={{ overflow: "hidden" }}>
           <form className="p-4 border rounded shadow" onSubmit={handleSubmit}>
             <h2 className="mb-4 text-center">Signup</h2>
-            {error && <div className="alert alert-danger">{error}</div>}
             <div className="mb-3">
               <label htmlFor="name" className="form-label">
                 Name

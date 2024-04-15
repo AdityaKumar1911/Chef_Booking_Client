@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import kitchen from "../../assets/kitchen.jpg";
 import "../Login/Login.css";
 
@@ -11,11 +13,11 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email.trim()) {
-      alert("Please enter your email");
+      toast.error("Please enter your email");
       return;
     }
     if (!password.trim()) {
-      alert("Please enter your password");
+      toast.error("Please enter your password");
       return;
     }
 
@@ -31,24 +33,29 @@ const LoginPage = () => {
         throw new Error("Failed to login");
       }
       const data = await response.json();
-      const token = data.token;
+      const { token, user } = data;
       localStorage.setItem("jwtToken", token);
-      localStorage.setItem("value", 1);
-      navigate("/");
+      localStorage.setItem("userid", user._id); // Assuming user._id is the user ID
+      console.log("User ID saved in localStorage:", user._id);
+      toast.success("Login successful");
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
     } catch (error) {
-      alert("Failed to login");
+      toast.error("Failed to login");
     }
   };
 
   return (
     <div className="container-fluid">
+      <ToastContainer />
       <div className="row justify-content-center align-items-center vh-100">
         <div
           className="col-md-7 d-none d-md-block ml-n26 mt-0 "
           style={{ height: "100%", marginLeft: "-26px", overflow: "hidden" }}
         >
           <Link to="/">
-          <p className="return-home-btn">Chef Booking</p>
+            <p className="return-home-btn">Chef Booking</p>
           </Link>
           <img src={kitchen} alt="Kitchen" className="img-fluid h-100" />
         </div>

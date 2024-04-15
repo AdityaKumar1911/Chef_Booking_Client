@@ -1,13 +1,18 @@
 .social-icon {
-    font-size: 24px;
-    margin: 0 10px; /* Add space between icons */
-  }
-  .footer-background{
-   color: #fff;
-	 background-color: #107569;
-   /* position: fixed; */
-   bottom: 0;
-   width: 100%;
-  }
+  font-size: 24px;
+  margin: 0 10px; /* Add space between icons */
+  color: white;
+  transition: transform 0.3s; /* Smooth transition for the transform property */
+}
 
- 
+.social-icon:hover {
+  transform: scale(1.2); /* Zoom in effect on hover */
+}
+
+.footer-background {
+  color: #fff;
+  background-color: #107569;
+  /* position: fixed; */
+  bottom: 0;
+  width: 100%;
+}

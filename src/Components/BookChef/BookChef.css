@@ -163,3 +163,7 @@ form .button input:hover {
         width: 0;
     }
 }
+
+.react-datepicker-wrapper{
+    width: 100%;
+}

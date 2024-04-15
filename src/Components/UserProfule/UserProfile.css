@@ -1,0 +1,37 @@
+
+
+.profile{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 100px;
+
+}
+
+.btn-details{
+    background-color: initial;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    color: #000;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 450;
+    margin-right: 10px;
+    padding: 8px 20px;
+    text-decoration: none;
+
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 100% of the viewport height */
+  }
+  
+  .profile {
+    flex: 1; /* Take up remaining vertical space */
+  }
+  
+  .footer {
+    bottom: 0;
+  }
+  
