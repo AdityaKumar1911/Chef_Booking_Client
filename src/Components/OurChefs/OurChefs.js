@@ -49,7 +49,7 @@ const OurChefs = () => {
       .then((response) => {
         const { chef } = response.data;
         if (chef && chef.isAvailable === false) {
-          toast.success("Your selected chef is not available");
+          toast.error("Your selected chef is not available");
         } else {
           check(chefID);
         }

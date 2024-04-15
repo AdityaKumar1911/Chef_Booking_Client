@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../BookChef/BookChef.css";
 import NavBar from "../NavBar/NavBar";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { toast } from "react-toastify";
@@ -90,7 +90,7 @@ function BookChef() {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
@@ -101,8 +101,9 @@ function BookChef() {
         axios
           .post("http://localhost:4000/sendEmail", formData)
           .then(() => {
+            toast.success("Email sent successfully");
             setTimeout(() => {
-              toast.success("Email sent successfully");
+              navigator("/");
             }, 2000);
           })
           .catch((error) => {
